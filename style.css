@@ -1,0 +1,224 @@
+
+
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #131313;
+}
+
+.nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-wrap: wrap;
+    width: 100%;
+    transform-style: preserve-3d;
+}
+
+.box{
+    cursor: pointer;
+    position: relative;
+    width: 300px;
+    height: 400px;
+    margin: 40px;
+    background: #232323;
+    border-radius: 20px;
+    transform-style: preserve-3d;
+
+}
+
+.box::before{
+    content: "NIKE";
+    position: absolute;
+    top: 2rem;
+    left: 1.8rem;
+    font-size: 5em;
+    font-weight: 900;
+    color: #fff;
+    font-style: italic;
+    opacity: 0;
+    transition: 0.5s;
+}
+.box::after{
+    content: "SHOES";
+    position: absolute;
+    bottom: 3.5rem;
+    left: 1.3rem;
+    font-size: 4em;
+    font-weight: 900;
+    color: #fff;
+    font-style: italic;
+    opacity: 0;
+    transition: 0.5s;
+}
+.box:hover::after{
+    opacity: 0.06;
+}
+.box:hover::before{
+    opacity: 0.06;
+}
+
+.name{
+    text-transform: uppercase;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    color: #fff;
+    width: 100%;
+    transform-style: preserve-3d;
+    transform: translate3d(0,0,75px);
+    transition: 0.5s;
+    opacity: 0;
+    z-index: 10;
+}
+.box:hover .name{
+    top: 25px;
+    opacity: 1;
+}
+
+.buy{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    padding: 10px 25px;
+    border-radius: 30px;
+    transition: 0.5s;
+    opacity: 0;
+    z-index: 10;
+
+}
+.box:hover .buy{
+    bottom: 25px;
+    opacity: 1;
+}
+
+.circle{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height:190px;
+    border-radius: 50%;
+    transition: 0.5s;
+    background: #fff;
+    transform-style: preserve-3d;
+    z-index: 10;
+    opacity: 0;
+    transform: translate3d(-50%, -50%, 50px);
+}
+.box:hover .circle{
+    opacity: 1;
+}
+
+.produto{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 100px;
+    transition: 0.5s;
+    z-index: 11;
+    transform-style: preserve-3d;
+    transform: translate3d(-50%, -50%, 150px) rotate(-15deg);
+}
+
+.box img{
+    max-width: 100%;
+}
+
+.box:nth-child(1) .circle,
+.box:nth-child(1) .buy{
+ background: #35517d;
+}
+.box:nth-child(2) .circle,
+.box:nth-child(2) .buy{
+    background: #bded7b;
+}
+.box:nth-child(3) .circle,
+.box:nth-child(3) .buy{
+    background: #dd3a6a;
+}
+.box:nth-child(4) .circle,
+.box:nth-child(4) .buy{
+ background: #35517d;
+}
+
+/*---------------------------ASIDE--------------------------*/
+aside{
+    border-radius: 15px;
+    height: 400px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    background: rgba(255, 255, 255,0.1);
+    padding: 1rem;
+}
+aside img{
+    cursor: pointer;
+    max-width: 5rem;
+}
+aside li:nth-child(2) {
+    margin: 3rem 0rem;
+}
+aside li:hover{
+    transform: translateX(-10px);
+}
+
+/*-------------------------------SECTION-------------------------------*/
+section{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.fundo{
+    width: 100%;
+    height: 100%;
+}
+.fundo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /*animation: zom 4s;*/
+}
+/*
+@keyframes zom{
+    0%{
+        transform: scale(1.3);
+    }
+    100%{
+        transform: scale(1);
+    }
+    
+}*/
+
+.banner{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.banner h1{
+    letter-spacing: 1.5rem;
+    font-size: 15rem;
+    font-weight: 800;
+    color: #fff;
+    text-shadow: 4px 4px 3px #000;
+}
